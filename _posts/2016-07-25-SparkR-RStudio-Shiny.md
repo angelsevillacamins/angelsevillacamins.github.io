@@ -3,7 +3,7 @@ layout: post
 title: Spark, RStudio and Shiny servers in a docker cluster hosted by Carina
 ---
 ## Summary
-The objetive of this blog is demostrate that the integration of a Spark master node, RStudio and Shiny servers is possible in a docker image. Moreover, an indefinite number of Spark worker nodes can be deployed using the same image. Furthemore, a toy example of a Shiny application powered by SparkR is included.
+The objective of this blog is demonstrate that the integration of a Spark master node, RStudio and Shiny servers is possible in a docker image. Moreover, an indefinite number of Spark worker nodes can be deployed using the same image. Furthemore, a toy example of a Shiny application powered by SparkR is included.
 
 ## Introducction
 
