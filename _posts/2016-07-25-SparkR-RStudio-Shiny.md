@@ -2,7 +2,7 @@
 layout: post
 title: Spark, RStudio and Shiny servers in a docker cluster hosted by Carina
 ---
-## Introduction
+## Summary
 The objetive of this blog is demostrate that the integration of a Spark master node, RStudio and Shiny servers is possible in a docker image. Moreover, an indefinite number of Spark worker nodes can be deployed using the same image. Furthemore, a toy example of a Shiny application powered by SparkR is included.
 
 SparkR is an R package designed to use Apache Spark from the R command line allowing distributed computations on large datasets. Importantly, the distributed machined learning library MLlib can be utilized in SparkR. For training proposes, it can be run in "standalone mode", which means using a single node, probably your own computer. 
@@ -28,7 +28,8 @@ To get started in 15 minutes, follow the next instructions. For a more detailed 
 1. Create a Carina cluster and scale up to **3 nodes**
 
 1. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina/functionality).
-If everything has run smoothly, you should see something like this after the `docker info` command :
+If everything has run smoothly, you should see something like this after the `docker info` command:
+
 ```
 $ docker info
 Containers: 5
@@ -51,6 +52,7 @@ Nodes: 1
   └ UpdatedAt: 2016-05-27T19:27:24Z
   └ ServerVersion: 1.11.2    
 ```
+
 1. Run the following commands:
 ```sh      
 ## Define a network
