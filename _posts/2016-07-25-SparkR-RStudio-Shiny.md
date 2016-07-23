@@ -34,7 +34,7 @@ Furthemore, RStudio and Shiny servers can be hosted simultaneously in the same c
 
 ## Getting started
 
-To get started in 15 minutes, follow the next instructions. For a more detailed description, go [here](https://github.com/angelsevillacamins/spark-rstudio-shiny/wiki/spark-rstudio-shiny-in-detail).
+To get started in 15 minutes, follow the next instructions. For a more detailed description, go [here](https://github.com/angelsevillacamins/spark-rstudio-shiny/wiki/spark-rstudio-shiny-docker-image-in-detail).
 
 1. Sign up for the Carina Beta [here](https://app.getcarina.com/app/signup).
 
@@ -136,7 +136,7 @@ or go to the Carina Clusters page and press Edit Cluster. The ip should be in th
 
 To install this application go [here](http://angelsevillacamins/spark-rstudio-shiny). 
 
-For a more detailed explanation go [here](http://angelsevillacamins/wiki/glm-sparkr-docker).
+For a more detailed explanation go [here](https://github.com/angelsevillacamins/spark-rstudio-shiny/wiki/glm-sparkr-docker).
 
 If you can't wait, you can test this application using this [link](http://glmsparkrdocker.inbionova.com/).
 
