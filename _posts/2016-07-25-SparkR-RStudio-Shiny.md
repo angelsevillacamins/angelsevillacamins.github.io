@@ -43,86 +43,86 @@ To get started in 15 minutes, follow the subsequent instructions. For a more det
 1. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
 If everything runs smoothly, you should see something like this after the `docker info` command:
 
-```
-$ docker info
-Containers: 5
- Running: 3
- Paused: 0
- Stopped: 2
-Images: 5
-Server Version: swarm/1.2.0
-Role: primary
-Strategy: spread
-Filters: health, port, dependency, affinity, constraint
-Nodes: 1
- 1dba0f72-75bc-4825-a5a0-b2993c535599-n1: 172.99.70.6:42376
-  └ Status: Healthy
-  └ Containers: 5
-  └ Reserved CPUs: 0 / 12
-  └ Reserved Memory: 0 B / 4.2 GiB
-  └ Labels: com.docker.network.driver.overlay.bind_interface=eth1, executiondriver=, kernelversion=3.18.21-2-rackos, operatingsystem=Debian GNU/Linux 7 (wheezy) (containerized), storagedriver=aufs
-  └ Error: (none)
-  └ UpdatedAt: 2016-05-27T19:27:24Z
-  └ ServerVersion: 1.11.2    
-```
+  ```
+  $ docker info
+  Containers: 5
+   Running: 3
+   Paused: 0
+   Stopped: 2
+  Images: 5
+  Server Version: swarm/1.2.0
+  Role: primary
+  Strategy: spread
+  Filters: health, port, dependency, affinity, constraint
+  Nodes: 1
+   1dba0f72-75bc-4825-a5a0-b2993c535599-n1: 172.99.70.6:42376
+    └ Status: Healthy
+    └ Containers: 5
+    └ Reserved CPUs: 0 / 12
+    └ Reserved Memory: 0 B / 4.2 GiB
+    └ Labels: com.docker.network.driver.overlay.bind_interface=eth1, executiondriver=, kernelversion=3.18.21-2-rackos, operatingsystem=Debian GNU/Linux 7 (wheezy) (containerized), storagedriver=aufs
+    └ Error: (none)
+    └ UpdatedAt: 2016-05-27T19:27:24Z
+    └ ServerVersion: 1.11.2    
+  ```
 
 1. Run the following commands:
 
-```sh      
-## Define a network
-docker network create spark_network
-
-## Create data volume container with a folder to share among the nodes
-docker create --net spark_network --name data-share \
-  --volume /home/rstudio/share angelsevillacamins/spark-rstudio-shiny
+  ```sh      
+  ## Define a network
+  docker network create spark_network
   
-## Deploy master node
-docker run -d --net spark_network --name master \
-  -p 8080:8080 -p 8787:8787 -p 80:3838 \
-  --volumes-from data-share \
-  --restart=always \
-  angelsevillacamins/spark-rstudio-shiny /usr/bin/supervisord --configuration=/opt/conf/master.conf
+  ## Create data volume container with a folder to share among the nodes
+  docker create --net spark_network --name data-share \
+    --volume /home/rstudio/share angelsevillacamins/spark-rstudio-shiny
+    
+  ## Deploy master node
+  docker run -d --net spark_network --name master \
+    -p 8080:8080 -p 8787:8787 -p 80:3838 \
+    --volumes-from data-share \
+    --restart=always \
+    angelsevillacamins/spark-rstudio-shiny /usr/bin/supervisord --configuration=/opt/conf/master.conf
+    
+  ## Changing permissions in the share folder of the data volume
+  docker exec master chmod a+w /home/rstudio/share
   
-## Changing permissions in the share folder of the data volume
-docker exec master chmod a+w /home/rstudio/share
-
-## Deply worker01 node
-docker run -d --net spark_network --name worker01 \
-  --volumes-from data-share \
-  --restart=always \
-  angelsevillacamins/spark-rstudio-shiny /usr/bin/supervisord --configuration=/opt/conf/worker.conf
+  ## Deply worker01 node
+  docker run -d --net spark_network --name worker01 \
+    --volumes-from data-share \
+    --restart=always \
+    angelsevillacamins/spark-rstudio-shiny /usr/bin/supervisord --configuration=/opt/conf/worker.conf
+    
+  ## Changing permissions in the share folder of the data volume
+  docker exec worker01 chmod a+w /home/rstudio/share
   
-## Changing permissions in the share folder of the data volume
-docker exec worker01 chmod a+w /home/rstudio/share
+  ## Deploy worker02 node
+  docker run -d --net spark_network --name worker02 \
+    --volumes-from data-share \
+    --restart=always \
+    angelsevillacamins/spark-rstudio-shiny /usr/bin/supervisord --configuration=/opt/conf/worker.conf
+    
+  ## Changing permissions in the share folder of the data volume
+  docker exec worker02 chmod a+w /home/rstudio/share
+  ```
 
-## Deploy worker02 node
-docker run -d --net spark_network --name worker02 \
-  --volumes-from data-share \
-  --restart=always \
-  angelsevillacamins/spark-rstudio-shiny /usr/bin/supervisord --configuration=/opt/conf/worker.conf
+  After each docker run command, you should see the volume name such as:
   
-## Changing permissions in the share folder of the data volume
-docker exec worker02 chmod a+w /home/rstudio/share
-```
-
-After each docker run command, you should see the volume name such as:
-
-```
-c3673ae185b6966d77d193365e8ede1017f4c5a8c4543564565465677e65bd61e
-```
+  ```
+  c3673ae185b6966d77d193365e8ede1017f4c5a8c4543564565465677e65bd61e
+  ```
 
 5. Check master external IP with the following command:
 
-```sh
-docker ps
-```
+  ```sh
+  docker ps
+  ```
 or go to the Carina Clusters page and press Edit Cluster. The IP should be in the Containers description of your master node:
 
-```
-8787 → 146.20.00.00:8787
-8080 → 146.20.00.00::080
-3838 → 146.20.00.00:80
-```
+  ```
+  8787 → 146.20.00.00:8787
+  8080 → 146.20.00.00::080
+  3838 → 146.20.00.00:80
+  ```
 
 1. Launch your favorite web browser and use the previous addresses, taking into account that:
 
