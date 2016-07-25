@@ -42,8 +42,10 @@ To get started in 15 minutes, follow the next instructions. For a more detailed 
 
 3. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
 If everything has run smoothly, you should see something like this after the `docker info` command:
+
+  
   ```
-  $ docker info
+$ docker info
   Containers: 5
    Running: 3
    Paused: 0
@@ -62,7 +64,8 @@ If everything has run smoothly, you should see something like this after the `do
     └ Labels: com.docker.network.driver.overlay.bind_interface=eth1, executiondriver=, kernelversion=3.18.21-2-rackos, operatingsystem=Debian GNU/Linux 7 (wheezy) (containerized), storagedriver=aufs
     └ Error: (none)
     └ UpdatedAt: 2016-05-27T19:27:24Z
-    └ ServerVersion: 1.11.2    
+    └ ServerVersion: 1.11.2
   ```
+
 4. Run the following commands:
 
