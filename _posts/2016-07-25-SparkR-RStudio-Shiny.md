@@ -43,28 +43,28 @@ To get started in 15 minutes, follow the next instructions. For a more detailed 
 1. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
 If everything has run smoothly, you should see something like this after the `docker info` command:
 
-```
-  $ docker info
-  Containers: 5
-   Running: 3
-   Paused: 0
-   Stopped: 2
-  Images: 5
-  Server Version: swarm/1.2.0
-  Role: primary
-  Strategy: spread
-  Filters: health, port, dependency, affinity, constraint
-  Nodes: 1
-   1dba0f72-75bc-4825-a5a0-b2993c535599-n1: 172.99.70.6:42376
-    └ Status: Healthy
-    └ Containers: 5
-    └ Reserved CPUs: 0 / 12
-    └ Reserved Memory: 0 B / 4.2 GiB
-    └ Labels: com.docker.network.driver.overlay.bind_interface=eth1, executiondriver=, kernelversion=3.18.21-2-rackos, operatingsystem=Debian GNU/Linux 7 (wheezy) (containerized), storagedriver=aufs
-    └ Error: (none)
-    └ UpdatedAt: 2016-05-27T19:27:24Z
-    └ ServerVersion: 1.11.2    
-```
+  ```
+$ docker info
+Containers: 5
+ Running: 3
+ Paused: 0
+ Stopped: 2
+Images: 5
+Server Version: swarm/1.2.0
+Role: primary
+Strategy: spread
+Filters: health, port, dependency, affinity, constraint
+Nodes: 1
+ 1dba0f72-75bc-4825-a5a0-b2993c535599-n1: 172.99.70.6:42376
+  └ Status: Healthy
+  └ Containers: 5
+  └ Reserved CPUs: 0 / 12
+  └ Reserved Memory: 0 B / 4.2 GiB
+  └ Labels: com.docker.network.driver.overlay.bind_interface=eth1, executiondriver=, kernelversion=3.18.21-2-rackos, operatingsystem=Debian GNU/Linux 7 (wheezy) (containerized), storagedriver=aufs
+  └ Error: (none)
+  └ UpdatedAt: 2016-05-27T19:27:24Z
+  └ ServerVersion: 1.11.2    
+  ```
 
 1. Run the following commands:
 
