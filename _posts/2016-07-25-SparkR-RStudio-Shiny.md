@@ -42,7 +42,6 @@ To get started in 15 minutes, follow the next instructions. For a more detailed 
 
 3. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
 If everything has run smoothly, you should see something like this after the `docker info` command:
-
   ```
   $ docker info
   Containers: 5
@@ -65,6 +64,5 @@ If everything has run smoothly, you should see something like this after the `do
     └ UpdatedAt: 2016-05-27T19:27:24Z
     └ ServerVersion: 1.11.2    
   ```
-
 4. Run the following commands:
 
