@@ -38,11 +38,10 @@ To get started in 15 minutes, follow the subsequent instructions. For a more det
 
 1. Sign up for the Carina Beta [here](https://app.getcarina.com/app/signup).
 
-1. Create a Carina cluster and scale up to **3 nodes**
+2. Create a Carina cluster and scale up to **3 nodes**
 
-1. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
-If everything runs smoothly, you should see something like this after the `docker info` command:
-
+3. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
+If everything runs smoothly, you should see something like this after the `docker info` command :
   ```
   $ docker info
   Containers: 5
@@ -65,9 +64,7 @@ If everything runs smoothly, you should see something like this after the `docke
     └ UpdatedAt: 2016-05-27T19:27:24Z
     └ ServerVersion: 1.11.2    
   ```
-
-1. Run the following commands:
-
+4. Run the following commands:
   ```sh      
   ## Define a network
   docker network create spark_network
@@ -104,33 +101,30 @@ If everything runs smoothly, you should see something like this after the `docke
   ## Changing permissions in the share folder of the data volume
   docker exec worker02 chmod a+w /home/rstudio/share
   ```
-
-  After each docker run command, you should see the volume name such as:
   
+  After each docker run command, you should see the volume name such as:
   ```
   c3673ae185b6966d77d193365e8ede1017f4c5a8c4543564565465677e65bd61e
   ```
 
 5. Check master external IP with the following command:
-
   ```sh
   docker ps
   ```
 or go to the Carina Clusters page and press Edit Cluster. The IP should be in the Containers description of your master node:
-
   ```
   8787 → 146.20.00.00:8787
   8080 → 146.20.00.00::080
   3838 → 146.20.00.00:80
   ```
-
-1. Launch your favorite web browser and use the previous addresses, taking into account that:
+6. Launch your favorite web browser and use the previous addresses, taking into account that:
 
     - **Shiny server** should be directly accessible with the IP, thus, http://your.ip.as.above.
 
     - **Spark server** should be accessible using the port 8080, thus, http://your.ip.as.above:8080.
 
     - **R Studio server** should be accessible using the port 8787, thus, http://your.ip.as.above:8787.
+
 
 ## glm-sparkr-docker: a Shiny application example
 
