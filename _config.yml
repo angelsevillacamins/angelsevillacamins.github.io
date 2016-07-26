@@ -25,12 +25,12 @@ footer-links:
   instagram:
   linkedin: angel-sevilla-76765927
   pinterest:
-  rss: # just type anything here for a working RSS icon
+  rss: http://feeds.feedburner.com/AngelSevillaCaminsBlog
   twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
-
+  Rbloggers: 
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
