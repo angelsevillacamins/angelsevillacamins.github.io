@@ -13,7 +13,7 @@ SparkR is an R package designed to use Apache Spark from the R command line and 
 
 My personal experience is that not all the programs or applications developed in standalone mode will work in a fully integrated cluster mode. Therefore, SparkR should be deployed in a cluster to obtain its full potential. 
 
-It is interesting to mention that the deployment Spark has been previosly described on Digital Ocean ([here](http://www.infolace.com/blog/2015/02/27/create-an-ad-hoc-spark-cluster/)), EC2 (see [here](http://spark.apache.org/docs/latest/ec2-scripts.html)), Google cloud (see [here](https://cloud.google.com/dataproc/)) or Azure (see [here](https://blog.sixeyed.com/spark-on-azure-big-data-made-easy/)). Moreover, the integration of SparkR and Rstudio on AWS EC2 has been described extensively [here](http://www.r-bloggers.com/launch-apache-spark-on-aws-ec2-and-initialize-sparkr-using-rstudio/),even inluding the use of SparkR to power shiny applications [link](www.r-bloggers.com/using-apache-sparkr-to-power-shiny-applications-part-i). 
+It is interesting to mention that the deployment Spark has been previosly described on Digital Ocean ([here](http://www.infolace.com/blog/2015/02/27/create-an-ad-hoc-spark-cluster/)), EC2 (see [here](http://spark.apache.org/docs/latest/ec2-scripts.html)), Google cloud (see [here](https://cloud.google.com/dataproc/)) or Azure (see [here](https://blog.sixeyed.com/spark-on-azure-big-data-made-easy/)). Moreover, the integration of SparkR and Rstudio on AWS EC2 has been described extensively [here](http://www.r-bloggers.com/launch-apache-spark-on-aws-ec2-and-initialize-sparkr-using-rstudio/), even including the use of SparkR to power shiny applications [link](www.r-bloggers.com/using-apache-sparkr-to-power-shiny-applications-part-i). 
 
 I would like to highlight the last two blogs since they have been an important inspiration for this blog. The problem implementing SparkR on a cluster environment such as AWS EC2 is that a deep knowledge of cluster deployment is needed, and installing Spark is not straightforward.
 
@@ -30,7 +30,7 @@ Docker strongly advises a one process per container rule, however, there is a te
 
 This technology has also been used to deploy a Spark server cluster composed of a master node and an indefinite number of slave nodes [here](https://www.anchormen.nl/spark-docker/). This last application has been fundamental for the development of our image and the Spark server. 
 
-Furthemore, RStudio and Shiny servers can be hosted simultaneously in the same cluster to test our SparkR applications and even publish them. To our knowledge, there is no other docker image able to integrate Spark, RStudio and Shiny servers. Futhermore, we did't find any other free alternative to Carina as we propose using in this blog.
+Furthemore, RStudio and Shiny servers can be hosted simultaneously in the same cluster to test our SparkR applications and even publish them. To our knowledge, there is no other docker image able to integrate Spark, RStudio and Shiny servers in a cluster mode. Futhermore, we did't find any other free alternative to Carina as we propose using in this blog.
 
 ## Getting started
 
@@ -116,7 +116,7 @@ c3673ae185b6966d77d193365e8ede1017f4c5a8c4543564565465677e65bd61e
 ```sh
 docker ps
 ```
-or go to the Carina Clusters page and press Edit Cluster. The IP should be in the Containers description of your master node:
+or go to the Carina Clusters page and press Edit Cluster. The IP should be in the containers description of your master node:
 
 ```
 8787 → 146.20.00.00:8787
@@ -126,21 +126,21 @@ or go to the Carina Clusters page and press Edit Cluster. The IP should be in th
 
 6\. Launch your favorite web browser and use the previous addresses, taking into account that:
 
-    - **Shiny server** should be directly accessible with the IP, thus, http://your.ip.as.above.
+  - **Shiny server** should be directly accessible with the IP, thus, http://your.ip.as.above.
 
-    - **Spark server** should be accessible using the port 8080, thus, http://your.ip.as.above:8080.
+  - **Spark server** should be accessible using the port 8080, thus, http://your.ip.as.above:8080.
 
-    - **R Studio server** should be accessible using the port 8787, thus, http://your.ip.as.above:8787.
+  - **R Studio server** should be accessible using the port 8787, thus, http://your.ip.as.above:8787.
 
 ## glm-sparkr-docker: a Shiny application example
 
-To install this application go to [here](http://angelsevillacamins/spark-rstudio-shiny). 
+To install this application go to [here](https://github.com/angelsevillacamins/spark-rstudio-shiny). 
 
 For a more detailed explanation go to [here](https://github.com/angelsevillacamins/spark-rstudio-shiny/wiki/glm-sparkr-docker).
 
 If you can't wait, you can test this application using the following [link](http://glmsparkrdocker.inbionova.com/).
 
-
+![_config.yml]({{ site.baseurl }}/images/glm-sparkr-docker.png)
 
 ### To use this application:
 
