@@ -36,11 +36,11 @@ Furthemore, RStudio and Shiny servers can be hosted simultaneously in the same c
 
 To get started in 15 minutes, follow the subsequent instructions. For a more detailed description, go to [here](https://github.com/angelsevillacamins/spark-rstudio-shiny/wiki/spark-rstudio-shiny-docker-image-in-detail).
 
-* Sign up for the Carina Beta [here](https://app.getcarina.com/app/signup).
+1. Sign up for the Carina Beta [here](https://app.getcarina.com/app/signup).
 
-* Create a Carina cluster and scale up to **3 nodes**
+2. Create a Carina cluster and scale up to **3 nodes**
 
-* Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
+3. Connect to your Carina cluster as explained in [here](https://getcarina.com/docs/getting-started/getting-started-on-carina).
 If everything runs smoothly, you should see something like this after the `docker info` command:
 
 ```
@@ -66,7 +66,7 @@ Nodes: 1
   └ ServerVersion: 1.11.2    
 ```
 
-* Run the following commands:
+4\. Run the following commands:
 
 ```sh      
 ## Define a network
@@ -140,7 +140,7 @@ For a more detailed explanation go to [here](https://github.com/angelsevillacami
 
 If you can't wait, you can test this application using the following [link](http://glmsparkrdocker.inbionova.com/).
 
-![_config.yml]({{ site.baseurl }}/images/glm-sparkr-docker.png)
+
 
 ### To use this application:
 
