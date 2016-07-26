@@ -19,7 +19,7 @@ I would like to highlight the last two blogs since they have been an important i
 
 ### Docker
 
-A potential solution is Docker, an open source project to automatically deploy applications into  "containers". These containers are based on images which contain a root file system and several execution parameters to constitute an independent virtualized operating system. From the docker [website](https://docs.docker.com): "The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software". In this [link](http://code.markedmondson.me/setting-up-scheduled-R-scripts-for-an-analytics-team/), an example of using a dockerized RStudio Server can be found. 
+A potential solution is Docker, an open source project to automatically deploy applications into  "containers". These containers are based on images which contain a root file system and several execution parameters to constitute an independent virtualized operating system. From the docker [website](https://docs.docker.com/engine/reference/glossary/): "The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software". In this [link](http://code.markedmondson.me/setting-up-scheduled-R-scripts-for-an-analytics-team/), an example of using a dockerized RStudio Server can be found. 
 
 ### Carina
 
@@ -120,7 +120,7 @@ or go to the Carina Clusters page and press Edit Cluster. The IP should be in th
 
 ```
 8787 → 146.20.00.00:8787
-8080 → 146.20.00.00::080
+8080 → 146.20.00.00::8080
 3838 → 146.20.00.00:80
 ```
 
