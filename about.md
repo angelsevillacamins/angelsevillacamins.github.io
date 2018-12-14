@@ -18,4 +18,4 @@ Detailed CV [here](https://nl.linkedin.com/in/angel-sevilla-76765927)
 
 ### Contact me
 
-[asevilla@inbionova.com](mailto:asevilla@inbionova.com)
+[a.sevilla@anchormen.nl](mailto:a.sevilla@anchormen.nl)
