@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GPU support in WSL 2 in practice: Jupyter notebooks and Rstudio working seamlessly with a GPU using docker containers
+title: GPU support in WSL 2 in practice Jupyter notebooks and Rstudio working seamlessly with a GPU using docker containers
 ---
 ## Summary
 If you are reading this blog, probably you are wondering whether a GPU can be shared by Windows. This is a real problem because in virtual machines hosted on Windows, GPU support doesn’t work properly or it’s really hard to set up.
